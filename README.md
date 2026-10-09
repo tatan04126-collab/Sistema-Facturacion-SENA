@@ -1,2 +1,2 @@
 # Sistema-Facturacion-SENA
-Proyecto de facturación para Adso sena
+Proyecto de facturación para ADSO sena
