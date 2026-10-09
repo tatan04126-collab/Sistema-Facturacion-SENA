@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<main class="flex-grow-1 p-4">
+    <h2 class="mb-4">Registro de productos</h2>
+<form>
+  <div class="mb-3">
+    <label for="Nombre" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="Nombre" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write your name the product.</div>
+  </div>
+    <div class="mb-3">
+    <label for="Descripcion" class="form-label">Descripcion</label>
+    <input type="text" class="form-control" id="Descripcion" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write description.</div>
+  </div>
+      <div class="mb-3">
+    <label for="Marca" class="form-label">Marca</label>
+    <input type="text" class="form-control" id="Marca" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write Marca.</div>
+  </div>
+      <div class="mb-3">
+    <label for="UnidadMedida" class="form-label">Unidad de medida</label>
+    <input type="text" class="form-control" id="UnidadMedida" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write Unidad de medida.</div>
+  </div>
+      <div class="mb-3">
+    <label for="PorcentajeIVA" class="form-label">Porcentaje IVA</label>
+    <input type="number" class="form-control" id="PorcentajeIVA" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write porcentaje IVA.</div>
+  </div>
+        <div class="mb-3">
+    <label for="NoExistencias" class="form-label">No. Existencias</label>
+    <input type="number" class="form-control" id="NoExistencias" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write No. de Existencias.</div>
+  </div>
+        <div class="mb-3">
+    <label for="ValorUnitario" class="form-label">Valor Unitario</label>
+    <input type="number" class="form-control" id="ValorUnitario" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write Valor Unitario.</div>
+  </div>  
+        <div class="mb-3">
+    <label for="FechaVencimiento" class="form-label">Fecha Vencimiento</label>
+    <input type="date" class="form-control" id="FechaVencimiento" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write Fecha Vencimiento.</div>
+  </div>
+        <div class="mb-3">
+    <label for="RegistrationDate" class="form-label">Registration Date</label>
+    <input type="date" class="form-control" id="RegistrationDate" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write your registration date.</div>
+  </div>
+  <a href="{{ url_for('inventario.list_inventario') }}" class="btn btn-light">Save</a>
+</form>
+</main>
+
+{% endblock %}

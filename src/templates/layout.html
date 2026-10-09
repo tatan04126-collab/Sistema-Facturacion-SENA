@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FacturaApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+<div class="d-flex min-vh-100">
+<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; min-height: 100vh;"> <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> <svg class="bi pe-none me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg> <span class="fs-4">Tu Supermercado</span> </a> <hr> <ul class="nav nav-pills flex-column mb-auto"> <li class="nav-item"> <a href="{{ url_for('home.home') }}" class="nav-link {% if request.endpoint == 'home.home' %}active{% else %}text-white{% endif %}" {% if request.endpoint == 'home.home' %}aria-current="page"{% endif %}> <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"> <use xlink:href="#home"></use> </svg>
+Home
+<!--</a> </li> <li> <a href="{{ url_for('facturacion.list_facturacion') }}" class="nav-link {% if request.endpoint == 'facturacion.list_facturacion' %}active{% else %}text-white{% endif %}" {% if request.endpoint == 'facturacion.list_facturacion' %}aria-current="page"{% endif %}> <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#speedometer2"></use></svg>
+Facturación -->
+</a> </li> <li> <a href="{{ url_for('inventario.list_inventario') }}" class="nav-link {% if request.endpoint == 'inventario.list_inventario' %}active{% else %}text-white{% endif %}" {% if request.endpoint == 'inventario.list_inventario' %}aria-current="page"{% endif %}> <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#speedometer2"></use></svg>
+Inventario
+</a> </li> <li> <a href="{{ url_for('promociones.list_promociones') }}" class="nav-link {% if request.endpoint == 'promociones.list_promociones' %}active{% else %}text-white{% endif %}" {% if request.endpoint == 'promociones.list_promociones' %}aria-current="page"{% endif %}> <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#speedometer2"></use></svg>
+Promociones
+</a> </li> <li> <a href="{{ url_for('vendedores.list_vendedores') }}" class="nav-link {% if request.endpoint == 'vendedores.list_vendedores' %}active{% else %}text-white{% endif %}" {% if request.endpoint == 'vendedores.list_vendedores' %}aria-current="page"{% endif %}> <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#speedometer2"></use></svg>
+Vendedores
+</a> </li> <li> <a href="{{ url_for('clients.List_clients') }}" class="nav-link {% if request.endpoint == 'clients.List_clients' %}active{% else %}text-white{% endif %}" {% if request.endpoint == 'clients.List_clients' %}aria-current="page"{% endif %}> <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#speedometer2"></use></svg>
+Clientes
+<!--</a> </li> <li> <a href="{{ url_for('administracion.list_administracion') }}" class="nav-link {% if request.endpoint == 'administracion.list_administracion' %}active{% else %}text-white{% endif %}" {% if request.endpoint == 'administracion.list_administracion' %}aria-current="page"{% endif %}> <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#speedometer2"></use></svg>
+Administración-->
+</a> </li> </ul> <hr> <div class="dropdown"> <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2"> 
+<strong>Jhonatan Marquez</strong> </a> <ul class="dropdown-menu dropdown-menu-dark text-small shadow"> <li><a class="dropdown-item" href="#">Sign out</a></li> </ul> </div> </div>    
+
+<div class="flex-grow-1">
+    {% block content %}
+    {% endblock %}
+</div>
+</div>
+</body>
+</html>

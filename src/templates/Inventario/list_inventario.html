@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<main class="p-4">
+    <h2 class="mb-4">Listado de productos</h2>
+    <div class="d-flex align-items-center gap-3 mb-3">
+    <nav class="navbar bg-body-tertiary flex-grow-1 p-0">
+  <form class="container-fluid">
+    <div class="input-group">
+      <span class="input-group-text" id="basic-addon1">@</span>
+      <input type="text" class="form-control" placeholder="Buscar producto..." aria-label="Buscar producto..." aria-describedby="basic-addon1"/>
+    </div>
+  </form>
+</nav>
+    <div class="d-flex gap-2 flex-shrink-0">
+  <a href="{{ url_for('inventario.form_inventario') }}" class="btn btn-light">Nuevo</a>
+  <!-- <button class="btn btn-light" type="button">Editar</button> -->
+  <!-- <button class="btn btn-light" type="button">Eliminar</button> -->
+</div>
+    </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Unidad de medida</th>
+      <th scope="col">Porcentaje IVA</th>
+      <th scope="col">No. Existencias</th>
+      <th scope="col">Valor Unitario</th>
+      <th scope="col">Fecha Vencimiento</th>
+      <th scope="col">Fecha de registro</th>            
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Pechuga de Pollo</td>
+      <td>Pechuga de pollo congelada</td>
+      <td>Pimpollo</td>
+      <td>Kilogramo</td>
+      <td>19</td>
+      <td>25</td>      
+      <td>18500</td>
+      <td>2026-06-03</td>
+      <td>2026-05-03</td>      
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Arroz Blanco 500g</td>
+      <td>Arroz blanco de grano largo</td>
+      <td>Diana</td>
+      <td>Unidad</td>
+      <td>19</td>
+      <td>100</td>
+      <td>2500</td>
+      <td>2026-06-03</td>
+      <td>2026-05-03</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Leche Condensada 400g</td>
+      <td>Leche condensada sabor vainilla</td>
+      <td>Gabriela</td>
+      <td>Unidad</td>
+      <td>19</td>
+      <td>50</td>
+      <td>3200</td>
+      <td>2026-06-03</td>
+      <td>2026-05-03</td>
+    </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-between align-items-center">
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      Mostrando 3 de 3 clientes
+    </span>
+  </div>
+</nav>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+    <li class="page-item disabled">
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>
+</main>
+
+{% endblock %}

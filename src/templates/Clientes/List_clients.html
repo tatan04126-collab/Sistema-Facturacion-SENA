@@ -1,0 +1,101 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<main class="p-4">
+    <h2 class="mb-4">Listado de clientes</h2>
+    <div class="d-flex align-items-center gap-3 mb-3">
+    <nav class="navbar bg-body-tertiary flex-grow-1 p-0">
+  <form class="container-fluid">
+    <div class="input-group">
+      <span class="input-group-text" id="basic-addon1">@</span>
+      <input type="text" class="form-control" placeholder="Buscar cliente..." aria-label="Buscar cliente..." aria-describedby="basic-addon1"/>
+    </div>
+  </form>
+</nav>
+    <div class="d-flex gap-2 flex-shrink-0">
+  <a href="{{ url_for('clients.form_clients') }}" class="btn btn-light">Nuevo</a>
+  <!-- <button class="btn btn-light" type="button">Editar</button> -->
+  <!-- <button class="btn btn-light" type="button">Eliminar</button> -->
+</div>
+    </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Tipo de documento</th>
+      <th scope="col">Cedula</th>
+      <th scope="col">Name</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Email</th>
+      <th scope="col">Fecha de nacimiento</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Fecha de registro</th>            
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>CC</td>
+      <td>1032456781</td>
+      <td>Daniela Castro</td>
+      <td>Calle 52 # 18-34</td>
+      <td>3114567892</td>
+      <td>daniela.castro@gmail.com</td>      
+      <td>1999-02-14</td>
+      <td>27</td>
+      <td>2026-06-03</td>      
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>CC</td>
+      <td>1045678932</td>
+      <td>Sebastian Lopez</td>
+      <td>Av. El Poblado # 45-67</td>
+      <td>3012345678</td>
+      <td>sebastian.lopez@gmail.com</td>
+      <td>1995-11-28</td>
+      <td>28</td>
+      <td>2023-09-15</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>CC</td>
+      <td>1019876543</td>
+      <td>Valentina Perez</td>
+      <td>Diagonal 45 # 12-34</td>
+      <td>3009876543</td>
+      <td>valentina.perez@gmail.com</td>
+      <td>1998-07-20</td>
+      <td>25</td>
+      <td>2024-03-10</td>
+    </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-between align-items-center">
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      Mostrando 3 de 3 clientes
+    </span>
+  </div>
+</nav>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+    <li class="page-item disabled">
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>
+</main>
+
+{% endblock %}

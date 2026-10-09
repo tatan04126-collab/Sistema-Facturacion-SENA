@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<main class="p-4">
+    <h2 class="mb-4">Gestor de promociones</h2>
+    <div class="d-flex align-items-center gap-3 mb-3">
+    <nav class="navbar bg-body-tertiary flex-grow-1 p-0">
+  <form class="container-fluid">
+    <div class="input-group">
+      <span class="input-group-text" id="basic-addon1">@</span>
+      <input type="text" class="form-control" placeholder="Buscar promoción..." aria-label="Buscar promoción..." aria-describedby="basic-addon1"/>
+    </div>
+  </form>
+</nav>
+    <div class="d-flex gap-2 flex-shrink-0">
+  <a href="{{ url_for('promociones.form_promociones') }}" class="btn btn-light">Nuevo</a>
+  <!-- <button class="btn btn-light" type="button">Editar</button> -->
+  <!-- <button class="btn btn-light" type="button">Eliminar</button> -->
+</div>
+    </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Producto Asociado</th>
+      <th scope="col">Tipo de Promoción</th>
+      <th scope="col">Valor porcentaje</th>
+      <th scope="col">Fecha Inicio</th>
+      <th scope="col">Fecha Fin</th>
+      <th scope="col">Estado</th>       
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Frijol Diana</td>
+      <td>Descuento</td>
+      <td>15</td>
+      <td>2026-06-03</td>
+      <td>2026-05-03</td>
+      <td>Activo</td>      
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Aceite Rica Palma</td>
+      <td>Combo 2x1</td>
+      <td>20</td>
+      <td>2026-06-03</td>
+      <td>2026-05-03</td>
+      <td>Activo</td>      
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Leche Condensada 400g</td>
+      <td>Descuento</td>
+      <td>25</td>
+      <td>2026-06-03</td>
+      <td>2026-05-03</td>
+      <td>Inactivo</td>      
+    </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-between align-items-center">
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      Mostrando 3 de 3 clientes
+    </span>
+  </div>
+</nav>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+    <li class="page-item disabled">
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<main class="flex-grow-1 p-4">
+    <h2 class="mb-4">Crear Promoción</h2>
+<form>
+  <div class="mb-3">
+    <label for="ProductoAsociado" class="form-label">Producto Asociado</label>
+    <input type="text" class="form-control" id="ProductoAsociado" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write the associated product.</div>
+  </div>
+    <div class="mb-3">
+    <label for="TipodePromocion" class="form-label">Tipo de promocion</label>
+    <input type="text" class="form-control" id="TipodePromocion" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write the type of promotion.</div>
+  </div>
+      <div class="mb-3">
+    <label for="ValorPorcentaje" class="form-label">ValorPorcentaje</label>
+    <input type="text" class="form-control" id="ValorPorcentaje" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write the percentage value.</div>
+  </div>
+        <div class="mb-3">
+    <label for="FechaInicio" class="form-label">Fecha Inicio</label>
+    <input type="date" class="form-control" id="FechaInicio" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write Fecha Inicio.</div>
+  </div>
+        <div class="mb-3">
+    <label for="FechaFin" class="form-label">Fecha Fin</label>
+    <input type="date" class="form-control" id="FechaFin" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Write Fecha Fin.</div>
+  </div>
+        <div class="mb-3">
+    <label for="Estado" class="form-label">Estado</label>
+    <select class="form-select" aria-label="Default select example">
+  <option selected>Select the status</option>
+  <option value="1">Activo</option>
+  <option value="2">Inactivo</option>
+</select>
+    <div id="emailHelp" class="form-text">Write the status.</div>
+  </div>
+  <a href="{{ url_for('promociones.list_promociones') }}" class="btn btn-light">Save</a>
+</form>
+</main>
+
+{% endblock %}
