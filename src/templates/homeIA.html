@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FacturaApp</title>
+
+    <!-- Bootstrap: estilos y componentes -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons: iconos del menú -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+    <style>
+        /* Configuración general */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f6f8fb;
+            color: #202c40;
+        }
+
+        /* Menú lateral */
+        .sidebar {
+            width: 197px;
+            height: 100vh;
+            background-color: #1e2a3d;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 25px 12px;
+        }
+
+        /* Nombre del supermercado */
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 27px;
+            padding: 0 6px;
+        }
+
+        .brand-icon {
+            background-color: #21618c;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .brand h5 {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .brand small {
+            display: block;
+            color: #aab7c8;
+            font-size: 9px;
+            margin-top: 3px;
+        }
+
+        /* Título de navegación */
+        .menu-title {
+            color: #aab7c8;
+            font-size: 9px;
+            margin: 0 0 7px;
+        }
+
+        /* Enlaces del menú */
+        .menu a {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            text-decoration: none;
+            color: #aab7c8;
+            font-size: 11px;
+            padding: 10px 13px;
+            margin-bottom: 3px;
+            border-radius: 7px;
+        }
+
+        .menu a:hover,
+        .menu a.active {
+            background-color: #354459;
+            color: white;
+        }
+
+        .menu a.active i {
+            color: #8ee5dc;
+        }
+
+        .menu i {
+            font-size: 13px;
+        }
+
+        /* Información del usuario */
+        .user {
+            border-top: 1px solid #344257;
+            margin-top: 24px;
+            padding-top: 13px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #21618c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            flex-shrink: 0;
+        }
+
+        .user strong {
+            display: block;
+            font-size: 10px;
+        }
+
+        .user small {
+            display: block;
+            font-size: 8px;
+            color: #aab7c8;
+            margin-top: 3px;
+        }
+
+        /* Área principal */
+        .main-content {
+            margin-left: 197px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Mensaje de bienvenida */
+        .welcome h1 {
+            font-size: clamp(26px, 3.5vw, 38px);
+            font-weight: bold;
+            letter-spacing: -1px;
+            margin-bottom: 18px;
+        }
+
+        .welcome p {
+            color: #71819a;
+            font-size: 15px;
+            line-height: 1.6;
+            max-width: 570px;
+            margin: 0 auto;
+        }
+
+        /* Adaptación a pantallas pequeñas */
+        @media (max-width: 600px) {
+            .sidebar {
+                width: 160px;
+                padding: 20px 8px;
+            }
+
+            .main-content {
+                margin-left: 160px;
+                padding: 18px;
+            }
+
+            .brand {
+                gap: 6px;
+                padding: 0 2px;
+            }
+
+            .brand h5 {
+                font-size: 11px;
+            }
+
+            .menu a {
+                gap: 7px;
+                padding: 10px 8px;
+                font-size: 10px;
+            }
+
+            .welcome h1 {
+                font-size: 25px;
+            }
+
+            .welcome p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+
+        <!-- Nombre y logo -->
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="bi bi-bag-check"></i>
+            </div>
+
+            <div>
+                <h5>Tu Supermercado</h5>
+                <small>PANEL ADMINISTRATIVO</small>
+            </div>
+        </div>
+
+        <!-- Opciones de navegación -->
+        <p class="menu-title">NAVEGACIÓN</p>
+
+        <nav class="menu">
+            <a href="/" class="active">
+                <i class="bi bi-house-door"></i>
+                Inicio
+            </a>
+
+            <a href="/facturacion">
+                <i class="bi bi-receipt"></i>
+                Facturación
+            </a>
+
+            <a href="/inventario">
+                <i class="bi bi-box-seam"></i>
+                Inventario
+            </a>
+
+            <a href="/promociones">
+                <i class="bi bi-speedometer2"></i>
+                Promociones
+            </a>
+
+            <a href="/vendedores">
+                <i class="bi bi-people"></i>
+                Vendedores
+            </a>
+
+            <a href="/clientes">
+                <i class="bi bi-person"></i>
+                Clientes
+            </a>
+
+            <a href="/administracion">
+                <i class="bi bi-gear"></i>
+                Administración
+            </a>
+        </nav>
+
+        <!-- Usuario conectado -->
+        <div class="user">
+            <div class="avatar">AD</div>
+
+            <div>
+                <strong>Jhonatan Marquez</strong>
+                <small>tatan04126@gmail.com</small>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+
+        <section class="welcome">
+            <h1>Bienvenido a Tu Supermercado.</h1>
+
+            <p>
+                Aquí podrás realizar la administración y gestión
+                de tu tienda fácilmente y sin complicaciones.
+            </p>
+        </section>
+
+    </main>
+
+</body>
+</html>
